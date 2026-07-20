@@ -1,0 +1,112 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    color: var(--grayColor);
+}
+
+main > .contentWrapper {
+    padding-top: 0;
+}
+
+h1 {
+    font-family: "Palanquin Dark Bold";
+    font-size: 48px;
+}
+
+#hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contentWrapper {
+    max-width: 1440px;
+    padding: 24px max(calc(50% - 720px), 64px);
+}
+
+.mainHeader {
+    background-color: var(--orangeColor);
+}
+
+.headerContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.headerContent > a {
+    display: flex;
+}
+
+.menuBtn {
+    background: url(./assets/icons/menu.svg);
+    width: 36px;
+    height: 36px;
+    border: none;
+    background-size: cover;
+    cursor: pointer;
+}
+
+.heroContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.heroImg {
+    height: 508px;
+    max-width: 100%;
+    object-fit: cover;
+    margin-bottom: 80px;
+}
+
+.restaurantLogoImg {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border: 13px var(--lightOrangeColor) solid;
+    border-radius: 50%;
+    box-shadow: 2px 4px 4px 0px #00000040;
+    position: absolute;
+    z-index: 1;
+    top: 450px;
+}
+
+.orangeHeadline {
+    color: var(--orangeColor);
+    font-family: "Palanquin Dark Bold";
+}
+
+.heroText {
+    font-family: "Palanquin Bold";
+    font-size: 24px;
+    text-align: center;
+}
+
+.mainFooter {
+    background-color: var(--orangeColor);
+}
+
+.footerContent {
+    color: var(--whiteColor);
+    font-size: 18px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-top: 48px;
+    padding-bottom: 24px;
+}
+
+.footerContent > figure {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
