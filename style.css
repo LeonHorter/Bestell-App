@@ -65,24 +65,50 @@ h1 {
     height: 508px;
     max-width: 100%;
     object-fit: cover;
-    margin-bottom: 80px;
+    margin-bottom: 40px;
 }
 
 .restaurantLogoImg {
-    width: 200px;
-    height: 200px;
+    width: 174px;
+    height: 174px;
     object-fit: cover;
     border: 13px var(--lightOrangeColor) solid;
     border-radius: 50%;
     box-shadow: 2px 4px 4px 0px #00000040;
     position: absolute;
     z-index: 1;
-    top: 450px;
+    top: 465px;
+}
+
+.headline {
+    display: flex;
+    gap: 26px;
+    align-items: center;
 }
 
 .orangeHeadline {
     color: var(--orangeColor);
     font-family: "Palanquin Dark Bold";
+}
+
+.review {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 24px;
+    padding: 4px 5px;
+    background-color: #FACAAC;
+    border-radius: 4px;
+}
+
+.reviewStars {
+    font-family: "Palanquin Dark Regular";
+    font-size: 20px;
+}
+
+.reviewAmount {
+    color: #726D6D;
+    font-size: 18px;
 }
 
 .heroText {
