@@ -7,6 +7,10 @@
     gap: 16px;
 }
 
+.mealCard:hover {
+    box-shadow: 2px 2px 4px 0px #00000026;
+}
+
 .mealCard > img {
     width: 200px;
     height: 120px;
@@ -21,7 +25,7 @@
     justify-content: space-between;
 }
 
-.description {
+.mealCardDescription {
     display: flex;
     justify-content: space-between;
 }
@@ -43,4 +47,6 @@
 
 .addBasketBtn:hover {
     cursor: pointer;
+    color: var(--orangeColor);
+    box-shadow: 1px 2px 2px 0px #00000033;
 }
