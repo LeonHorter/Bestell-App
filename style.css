@@ -5,10 +5,10 @@ body {
 }
 
 main {
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     align-items: center;
-    flex: 1;
+    flex: 1; */
     color: var(--grayColor);
 }
 
@@ -19,6 +19,16 @@ main > .contentWrapper {
 h1 {
     font-family: "Palanquin Dark Bold";
     font-size: 48px;
+}
+
+h2 {
+    font-family: "Palanquin Bold";
+    font-size: 40px;
+}
+
+h3 {
+    font-family: "Palanquin SemiBold";
+    font-size: 24px;
 }
 
 #hero {
@@ -117,11 +127,37 @@ h1 {
     text-align: center;
 }
 
+.dishCategory {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
 .dishCategory > header {
+    color: var(--whiteColor);
     background-color: var(--orangeColor);
+    margin-top: 30px;
     height: 60px;
+}
+
+.dishCategoryHeaderContent {
     display: flex;
     gap: 16px;
+    padding-top: 0;
+    padding-bottom: 0;
+    position: relative;
+    top: -10px;
+}
+
+.fontPalanquinRegular {
+    font-family: "Palanquin Regular";
+    font-weight: 400;
+}
+
+.dishCategoryImg {
+    width: 88px;
+    height: 88px;
+    object-fit: contain;
 }
 
 .mainFooter {

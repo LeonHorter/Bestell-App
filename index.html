@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,6 +16,7 @@
     <script src="./scripts/templates.js" defer></script>
     <script src="script.js" defer></script>
 </head>
+
 <body>
     <header class="mainHeader">
         <div class="contentWrapper headerContent">
@@ -40,24 +42,78 @@
         </section>
         <section id="burger" class="dishCategory">
             <header>
-                <img src="./assets/img/burger.png" alt="Burger">
-                <h2>Burger & Sandwiches</h2>
-            </header>
-            <article class="dish">
-                <img src="./assets/img/dish-1.jpg" alt="Veggie mushroom black burger">
-                <div>
-                    <div class="description">
-                        <div>
-                            <h3>Veggie mushroom black burger</h3>
-                            <p>Mixed green salad, Tomatoes, Edamame, Mushrooms</p>
-                        </div>
-                        <p>16,90 €</p>
-                    </div>
-                    <div class="actions">
-                        <button>Add to basket</button>
-                    </div>
+                <div class="dishCategoryHeaderContent contentWrapper">
+                    <img src="./assets/img/burger.png" alt="Burger" class="dishCategoryImg">
+                    <h2>Burger & Sandwiches</h2>
                 </div>
-            </article>
+            </header>
+            <div class="contentWrapper">
+                <article class="dish">
+                    <img src="./assets/img/dish-1.jpg" alt="Veggie mushroom black burger">
+                    <div class="dishContent">
+                        <div class="description">
+                            <div>
+                                <h3>Veggie mushroom black burger</h3>
+                                <p>Mixed green salad, Tomatoes, Edamame, Mushrooms</p>
+                            </div>
+                            <h3>16,90 €</h3>
+                        </div>
+                        <div class="actions">
+                            <button class="addBasketBtn">Add to basket</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <section id="pizza" class="dishCategory">
+            <header>
+                <div class="dishCategoryHeaderContent contentWrapper">
+                    <img src="./assets/img/pizza.png" alt="Pizza" class="dishCategoryImg">
+                    <h2>Pizza <span class="fontPalanquinRegular">(30 cm)</span></h2>
+                </div>
+            </header>
+            <div class="contentWrapper">
+                <article class="dish">
+                    <img src="./assets/img/dish-1.jpg" alt="Veggie mushroom black burger">
+                    <div class="dishContent">
+                        <div class="description">
+                            <div>
+                                <h3>Veggie mushroom black burger</h3>
+                                <p>Mixed green salad, Tomatoes, Edamame, Mushrooms</p>
+                            </div>
+                            <h3>16,90 €</h3>
+                        </div>
+                        <div class="actions">
+                            <button class="addBasketBtn">Add to basket</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <section id="salad" class="dishCategory">
+            <header>
+                <div class="dishCategoryHeaderContent contentWrapper">
+                    <img src="./assets/img/salad.png" alt="Salad" class="dishCategoryImg">
+                    <h2>Salad</h2>
+                </div>
+            </header>
+            <div class="contentWrapper">
+                <article class="dish">
+                    <img src="./assets/img/dish-1.jpg" alt="Veggie mushroom black burger">
+                    <div class="dishContent">
+                        <div class="description">
+                            <div>
+                                <h3>Veggie mushroom black burger</h3>
+                                <p>Mixed green salad, Tomatoes, Edamame, Mushrooms</p>
+                            </div>
+                            <h3>16,90 €</h3>
+                        </div>
+                        <div class="actions">
+                            <button class="addBasketBtn">Add to basket</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
         </section>
     </main>
     <footer class="mainFooter">
@@ -71,4 +127,5 @@
         </div>
     </footer>
 </body>
+
 </html>
