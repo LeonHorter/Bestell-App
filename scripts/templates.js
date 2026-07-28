@@ -1,15 +1,13 @@
-function getMealCardTemplate() {
+function getMealCardTemplate(meal) {
     return `<article class="mealCard">
-                <img src="./assets/img/menu-01.png" alt="Veggie mushroom black burger">
+                <img src="./assets/img/${meal.imgName}" alt="${meal.name}">
                 <div class="mealCardContent">
-                    <div class="mealCardDescription">
-                        <div>
-                            <h3>Veggie mushroom black burger</h3>
-                            <p>Mixed green salad, Tomatoes, Edamame, Mushrooms</p>
-                        </div>
-                        <h3>16,90 €</h3>
+                    <div class="mealCardTextBox">
+                        <h3>${meal.name}</h3>
+                        <p class="mealCardDescription">${meal.description}</p>
                     </div>
                     <div class="actions">
+                        <h3>${formatToCurrency(meal.price)}</h3>
                         <button class="addBasketBtn">Add to basket</button>
                     </div>
                 </div>

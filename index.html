@@ -17,7 +17,7 @@
     <script src="script.js" defer></script>
 </head>
 
-<body>
+<body onload="renderMeals()">
     <header class="mainHeader">
         <div class="contentWrapper headerContent">
             <a href="index.html"><img src="./assets/icons/logo.svg" alt="BestellAPP-Logo"></a>
@@ -40,32 +40,32 @@
                 <p class="heroText">The best of Burgers, Pizza, and Greens, all in one great place.</p>
             </div>
         </section>
-        <section id="burger" class="category">
+        <section class="category">
             <header>
                 <div class="categoryHeaderContent contentWrapper">
                     <img src="./assets/img/burger.png" alt="Burger" class="categoryImg">
                     <h2>Burger & Sandwiches</h2>
                 </div>
             </header>
-            <div class="contentWrapper"></div>
+            <div id="burger" class="mealsContent contentWrapper"></div>
         </section>
-        <section id="pizza" class="category">
+        <section class="category">
             <header>
                 <div class="categoryHeaderContent contentWrapper">
                     <img src="./assets/img/pizza.png" alt="Pizza" class="categoryImg">
                     <h2>Pizza <span class="fontPalanquinRegular">(30 cm)</span></h2>
                 </div>
             </header>
-            <div class="contentWrapper"></div>
+            <div id="pizza" class="mealsContent contentWrapper"></div>
         </section>
-        <section id="salad" class="category">
+        <section class="category">
             <header>
                 <div class="categoryHeaderContent contentWrapper">
                     <img src="./assets/img/salad.png" alt="Salad" class="categoryImg">
                     <h2>Salad</h2>
                 </div>
             </header>
-            <div class="contentWrapper"></div>
+            <div id="salad" class="mealsContent contentWrapper"></div>
         </section>
     </main>
     <footer class="mainFooter">

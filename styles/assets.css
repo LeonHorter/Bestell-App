@@ -19,23 +19,31 @@
 }
 
 .mealCardContent {
+    display: flex;
+    justify-content: space-between;
+    gap: 32px;
     flex: 1;
+}
+
+.mealCardTextBox {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    gap: 8px;
 }
 
 .mealCardDescription {
-    display: flex;
-    justify-content: space-between;
+    line-height: 120%;
 }
 
 .actions {
     display: flex;
-    justify-content: flex-end;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
 }
 
 .addBasketBtn {
+    width: 114px;
     background-color: var(--whiteColor);
     font-family: "Palanquin SemiBold";
     font-size: 16px;
