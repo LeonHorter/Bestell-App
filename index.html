@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -20,19 +20,91 @@
 <body onload="renderMeals()">
     <header class="mainHeader">
         <div class="contentWrapper headerContent">
-            <a href="index.html"><img src="./assets/icons/logo.svg" alt="BestellAPP-Logo"></a>
+            <a href="index.html"><img src="./assets/icons/logo.svg" alt="BestellAPP"></a>
             <button class="menuBtn"></button>
         </div>
     </header>
     <main>
+        <div class="basketScrollContainer">
+            <div class="basket">
+                <h4>Your Basket</h4>
+                <p class="basketEmptyText dNone">Nothing here yet.<br>Go ahead and choose something delicious!</p>
+                <img src="./assets/icons/basket_lightOrange.svg" alt="basket" class="basketIcon dNone">
+                <div class="basketContent">
+                    <div class="basketItem">
+                        <p>1 × Veggie mushroom black burger</p>
+                        <div class="basketItemLowerBox">
+                            <div class="basketItemActions">
+                                <button class="deleteBtn basketItemBtn"></button>
+                                1
+                                <button class="basketItemBtn">+</button>
+                            </div>
+                            <p>16,90 €</p>
+                        </div>
+                    </div>
+                    <div class="basketItem">
+                        <p>1 × Pizza Margherita</p>
+                        <div class="basketItemLowerBox">
+                            <div class="basketItemActions">
+                                <button class="deleteBtn basketItemBtn"></button>
+                                1
+                                <button class="basketItemBtn">+</button>
+                            </div>
+                            <p>16,90 €</p>
+                        </div>
+                    </div>
+                    <div class="basketItem">
+                        <p>1 × Pizza Diavolo</p>
+                        <div class="basketItemLowerBox">
+                            <div class="basketItemActions">
+                                <button class="deleteBtn basketItemBtn"></button>
+                                1
+                                <button class="basketItemBtn">+</button>
+                            </div>
+                            <p>16,90 €</p>
+                        </div>
+                    </div>
+                    <div class="basketItem">
+                        <p>1 × Pizza Diavolo</p>
+                        <div class="basketItemLowerBox">
+                            <div class="basketItemActions">
+                                <button class="deleteBtn basketItemBtn"></button>
+                                1
+                                <button class="basketItemBtn">+</button>
+                            </div>
+                            <p>16,90 €</p>
+                        </div>
+                    </div>
+                </div>
+                <table class="calculationTable">
+                    <tbody>
+                        <tr>
+                            <td>Subtotal</td>
+                            <td>36,70 €</td>
+                        </tr>
+                        <tr>
+                            <td>Delivery fee</td>
+                            <td>4,99 €</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td>Total</td>
+                            <td>41,69 €</td>
+                        </tr>
+                    </tfoot>
+                </table>
+                <button class="buyBtn">Buy now (41,69€)</button>
+            </div>
+        </div>
         <section id="hero">
-            <img src="./assets/img/hero.png" alt="Titelbild" class="heroImg">
-            <img src="./assets/img/restaurant_logo.png" alt="Restaurant-Logo" class="restaurantLogoImg">
+            <img src="./assets/img/hero.png" alt="hero" class="heroImg">
+            <img src="./assets/img/restaurant_logo.png" alt="restaurant logo" class="restaurantLogoImg">
             <div class="contentWrapper heroContent">
                 <div class="headline">
                     <h1><span class="orangeHeadline">Burger</span>House</h1>
                     <div class="review">
-                        <img src="./assets/icons/star.svg" alt="Stern-Icon">
+                        <img src="./assets/icons/star.svg" alt="star">
                         <p class="reviewStars">4,1</p>
                         <p class="reviewAmount">(317)</p>
                     </div>
@@ -43,7 +115,7 @@
         <section class="category">
             <header>
                 <div class="categoryHeaderContent contentWrapper">
-                    <img src="./assets/img/burger.png" alt="Burger" class="categoryImg">
+                    <img src="./assets/img/burger.png" alt="burger" class="categoryImg">
                     <h2>Burger & Sandwiches</h2>
                 </div>
             </header>
@@ -52,7 +124,7 @@
         <section class="category">
             <header>
                 <div class="categoryHeaderContent contentWrapper">
-                    <img src="./assets/img/pizza.png" alt="Pizza" class="categoryImg">
+                    <img src="./assets/img/pizza.png" alt="pizza" class="categoryImg">
                     <h2>Pizza <span class="fontPalanquinRegular">(30 cm)</span></h2>
                 </div>
             </header>
@@ -61,7 +133,7 @@
         <section class="category">
             <header>
                 <div class="categoryHeaderContent contentWrapper">
-                    <img src="./assets/img/salad.png" alt="Salad" class="categoryImg">
+                    <img src="./assets/img/salad.png" alt="salad" class="categoryImg">
                     <h2>Salad</h2>
                 </div>
             </header>
@@ -71,7 +143,7 @@
     <footer class="mainFooter">
         <div class="contentWrapper footerContent">
             <figure>
-                <img src="./assets/icons/copyright.svg" alt="Copyright-Logo">
+                <img src="./assets/icons/copyright.svg" alt="copyright">
                 <figcaption>2025 BurgerHouse</figcaption>
             </figure>
             <p>Imprint</p>

@@ -25,7 +25,7 @@
     flex: 1;
 }
 
-.mealCardTextBox {
+.mealCardLeftBox {
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -35,7 +35,7 @@
     line-height: 120%;
 }
 
-.actions {
+.mealCardRightBox {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -57,4 +57,5 @@
     cursor: pointer;
     color: var(--orangeColor);
     box-shadow: 1px 2px 2px 0px #00000033;
+    transition: 200ms ease-in;
 }
