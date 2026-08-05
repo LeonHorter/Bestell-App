@@ -178,7 +178,9 @@ button {
 }
 
 .basketContent {
+    width: 360px;
     height: 410px;
+    margin-left: 20px;
     overflow-y: scroll;
     scrollbar-color: var(--lightOrangeColor) var(--grayColor);
 
