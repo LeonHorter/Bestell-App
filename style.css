@@ -50,6 +50,18 @@ button {
     align-items: center;
 }
 
+#basketContent {
+    width: 360px;
+    height: 410px;
+    margin-left: 20px;
+    overflow-y: scroll;
+    scrollbar-color: var(--lightOrangeColor) var(--grayColor);
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 .contentWrapper {
     padding: 24px max(calc(50% - 720px), 64px);
 }
@@ -175,18 +187,6 @@ button {
     width: 120px;
     height: 120px;
     object-fit: cover;
-}
-
-.basketContent {
-    width: 360px;
-    height: 410px;
-    margin-left: 20px;
-    overflow-y: scroll;
-    scrollbar-color: var(--lightOrangeColor) var(--grayColor);
-
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
 }
 
 .basketItem {

@@ -8,8 +8,22 @@ function getMealCardTemplate(meal) {
                     </div>
                     <div class="mealCardRightBox">
                         <h3>${formatToCurrency(meal.price)}</h3>
-                        <button class="addBasketBtn">Add to basket</button>
+                        <button class="addBasketBtn" onclick="addToBasket('${meal.name}')">Add to basket</button>
                     </div>
                 </div>
             </article>`;
+}
+
+function getBasketItemTemplate(meal) {
+    return `<div class="basketItem">
+                <p>${meal.name}</p>
+                <div class="basketItemLowerBox">
+                    <div class="basketItemActions">
+                        <button class="deleteBtn basketItemBtn"></button>
+                        1
+                        <button class="basketItemBtn">+</button>
+                    </div>
+                    <p>${formatToCurrency(meal.price)}</p>
+                </div>
+            </div>`;
 }

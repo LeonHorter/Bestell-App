@@ -17,7 +17,7 @@
     <script src="script.js" defer></script>
 </head>
 
-<body onload="renderMeals()">
+<body onload="renderMeals(), renderBasket()">
     <header class="mainHeader">
         <div class="contentWrapper headerContent">
             <a href="index.html"><img src="./assets/icons/logo.svg" alt="BestellAPP"></a>
@@ -26,76 +26,38 @@
     </header>
     <main>
         <div class="basketScrollContainer">
-            <div class="basket">
-                <h4>Your Basket</h4>
-                <p class="basketEmptyText dNone">Nothing here yet.<br>Go ahead and choose something delicious!</p>
-                <img src="./assets/icons/basket_lightOrange.svg" alt="basket" class="basketIcon dNone">
-                <div class="basketContent">
-                    <div class="basketItem">
-                        <p>1 × Veggie mushroom black burger</p>
-                        <div class="basketItemLowerBox">
-                            <div class="basketItemActions">
-                                <button class="deleteBtn basketItemBtn"></button>
-                                1
-                                <button class="basketItemBtn">+</button>
-                            </div>
-                            <p>16,90 €</p>
-                        </div>
-                    </div>
-                    <div class="basketItem">
-                        <p>1 × Pizza Margherita</p>
-                        <div class="basketItemLowerBox">
-                            <div class="basketItemActions">
-                                <button class="deleteBtn basketItemBtn"></button>
-                                1
-                                <button class="basketItemBtn">+</button>
-                            </div>
-                            <p>16,90 €</p>
-                        </div>
-                    </div>
-                    <div class="basketItem">
-                        <p>1 × Pizza Diavolo</p>
-                        <div class="basketItemLowerBox">
-                            <div class="basketItemActions">
-                                <button class="deleteBtn basketItemBtn"></button>
-                                1
-                                <button class="basketItemBtn">+</button>
-                            </div>
-                            <p>16,90 €</p>
-                        </div>
-                    </div>
-                    <div class="basketItem">
-                        <p>1 × Pizza Diavolo</p>
-                        <div class="basketItemLowerBox">
-                            <div class="basketItemActions">
-                                <button class="deleteBtn basketItemBtn"></button>
-                                1
-                                <button class="basketItemBtn">+</button>
-                            </div>
-                            <p>16,90 €</p>
-                        </div>
-                    </div>
+            <!-- <div class="basket"> -->
+                
+                <div id="basketEmpty" class="basket dNone">
+                    <h4>Your Basket</h4>
+                    <p class="basketEmptyText">Nothing here yet.<br>Go ahead and choose something delicious!</p>
+                    <img src="./assets/icons/basket_lightOrange.svg" alt="basket" class="basketIcon">
                 </div>
-                <table class="calculationTable">
-                    <tbody>
-                        <tr>
-                            <td>Subtotal</td>
-                            <td>36,70 €</td>
-                        </tr>
-                        <tr>
-                            <td>Delivery fee</td>
-                            <td>4,99 €</td>
-                        </tr>
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <td>Total</td>
-                            <td>41,69 €</td>
-                        </tr>
-                    </tfoot>
-                </table>
-                <button class="buyBtn">Buy now (41,69€)</button>
-            </div>
+                <div id="basketFilled" class="basket dNone">
+                    <h4>Your Basket</h4>
+                    <div id="basketContent">
+                    </div>
+                    <table class="calculationTable">
+                        <tbody>
+                            <tr>
+                                <td>Subtotal</td>
+                                <td>36,70 €</td>
+                            </tr>
+                            <tr>
+                                <td>Delivery fee</td>
+                                <td>4,99 €</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td>Total</td>
+                                <td>41,69 €</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                    <button class="buyBtn">Buy now (41,69€)</button>
+                </div>
+            <!-- </div> -->
         </div>
         <section id="hero">
             <img src="./assets/img/hero.png" alt="hero" class="heroImg">

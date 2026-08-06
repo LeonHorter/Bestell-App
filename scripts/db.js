@@ -83,4 +83,6 @@ let meals = [
         "category" : "salad",
         "imgName" : "menu-12.png"
     }
-]
+];
+
+let basket = [];
