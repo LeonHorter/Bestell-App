@@ -51,4 +51,24 @@ function addToBasket(mealName) {
     basket.push(mealObjekt);
 
     renderBasket();
+    calculateBasket();
+}
+
+function calculateBasket() {
+    let subtotalAmountContentRef = document.getElementById('subtotalAmount');
+    let deliveryAmountContentRef = document.getElementById('deliveryAmount');
+    let totalAmountContentRef = document.getElementById('totalAmount');
+    let buyBtnTotalAmount = document.getElementById('buyBtnTotalAmount');
+    let subtotalAmount = 0;
+
+    for (let basketIndex = 0; basketIndex < basket.length; basketIndex++) {
+        subtotalAmount += basket[basketIndex].price;
+    }
+
+    let totalAmount = subtotalAmount + deliveryFee;
+
+    subtotalAmountContentRef.innerText = formatToCurrency(subtotalAmount);
+    deliveryAmountContentRef.innerText = formatToCurrency(deliveryFee);
+    totalAmountContentRef.innerText = formatToCurrency(totalAmount);
+    buyBtnTotalAmount.innerText = formatToCurrency(totalAmount);
 }

@@ -86,3 +86,5 @@ let meals = [
 ];
 
 let basket = [];
+
+let deliveryFee = 4.99;
