@@ -54,6 +54,14 @@ function addToBasket(mealName) {
     calculateBasket();
 }
 
+function removeFromBasket(mealName) {
+    const mealIndex = basket.findIndex(meal => meal.name === mealName);
+    basket.splice(mealIndex, 1);
+
+    renderBasket();
+    calculateBasket();
+}
+
 function calculateBasket() {
     let subtotalAmountContentRef = document.getElementById('subtotalAmount');
     let deliveryAmountContentRef = document.getElementById('deliveryAmount');

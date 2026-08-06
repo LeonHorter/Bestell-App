@@ -19,7 +19,7 @@ function getBasketItemTemplate(meal) {
                 <p>${meal.name}</p>
                 <div class="basketItemLowerBox">
                     <div class="basketItemActions">
-                        <button class="deleteBtn basketItemBtn"></button>
+                        <button class="deleteBtn basketItemBtn" onclick="removeFromBasket('${meal.name}')"></button>
                         1
                         <button class="basketItemBtn">+</button>
                     </div>
