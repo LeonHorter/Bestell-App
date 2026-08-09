@@ -43,7 +43,6 @@
 }
 
 .addBasketBtn {
-    width: 114px;
     background-color: var(--whiteColor);
     font-family: "Palanquin SemiBold";
     font-size: 16px;
@@ -51,11 +50,21 @@
     border: none;
     border-radius: 20px;
     padding: 5px 8px;
+    white-space: nowrap;
 }
 
 .addBasketBtn:hover {
     cursor: pointer;
     color: var(--orangeColor);
     box-shadow: 1px 2px 2px 0px #00000033;
+    transition: 200ms ease-in;
+}
+
+.orangeFontColor {
+    color: var(--orangeColor);
+}
+
+.marginLeft {
+    margin-left: 40px;
     transition: 200ms ease-in;
 }

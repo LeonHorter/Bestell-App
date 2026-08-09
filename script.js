@@ -9,7 +9,7 @@ function renderMeals() {
         contentRef[contentRefIndex].innerHTML = '';
 
         const mealsFilter = meals.filter(meal => meal.category == contentRef[contentRefIndex].id);
-        mealsFilter.forEach((meal) => contentRef[contentRefIndex].innerHTML += getMealCardTemplate(meal));
+        mealsFilter.forEach(meal => contentRef[contentRefIndex].innerHTML += getMealCardTemplate(meal));
     }
 }
 
@@ -46,31 +46,33 @@ function renderFilledBasket(emptyBasketContentRef, filledBasketContentRef) {
 }
 
 function formatToCurrency(value) {
-    value = new Intl.NumberFormat('de-DE', {style: 'currency', currency: 'EUR'}).format(value);
+    value = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(value);
     return value;
 }
 
 function addToBasket(mealName) {
     let mealObj = meals.find(meal => meal.name == mealName);
-    let basketMealObj = basket.find((element) => element.name == mealObj.name);
+    let basketMealObj = basket.find(element => element.name == mealObj.name);
 
     if (basketMealObj == null) {
-        basket.push({...mealObj, amount : 1});   // kopiert Referenz von mealObj und fügt amount nur in basket hinzu
+        basket.push({ ...mealObj, amount: 1 });   // kopiert Referenz von mealObj und fügt amount nur in basket hinzu
     } else {
         basketMealObj.amount++;
     }
 
     renderBasket();
     calculateBasket();
+    updateMealCard(mealName);
 }
 
 function reduceQuantity(mealName) {
-    let basketMealObj = basket.find((element) => element.name == mealName);
+    let basketMealObj = basket.find(element => element.name == mealName);
 
     basketMealObj.amount--;
 
     renderBasket();
     calculateBasket();
+    updateMealCard(mealName);
 }
 
 function removeFromBasket(mealName) {
@@ -79,6 +81,23 @@ function removeFromBasket(mealName) {
 
     renderBasket();
     calculateBasket();
+    updateMealCard(mealName);
+}
+
+function updateMealCard(mealName) {
+    let btnContentRef = document.getElementById('addBasketBtn-' + mealName);
+    let divContentRef = document.getElementById('mealCardLeftBox-' + mealName);
+    let basketMealObj = basket.find(element => element.name == mealName);
+
+    if (basketMealObj != null) {
+        btnContentRef.innerText = 'Added ' + basketMealObj.amount;
+        btnContentRef.classList.add('orangeFontColor');
+        divContentRef.classList.add('marginLeft');
+    } else {
+        btnContentRef.innerText = 'Add to basket';
+        btnContentRef.classList.remove('orangeFontColor');
+        divContentRef.classList.remove('marginLeft');
+    }
 }
 
 function calculateBasket() {
