@@ -8,7 +8,7 @@ function renderMeals() {
     for (let contentRefIndex = 0; contentRefIndex < contentRef.length; contentRefIndex++) {
         contentRef[contentRefIndex].innerHTML = '';
 
-        const mealsFilter = meals.filter(meal => meal.category === contentRef[contentRefIndex].id);
+        const mealsFilter = meals.filter(meal => meal.category == contentRef[contentRefIndex].id);
         mealsFilter.forEach((meal) => contentRef[contentRefIndex].innerHTML += getMealCardTemplate(meal));
     }
 }
@@ -42,20 +42,26 @@ function renderFilledBasket(emptyBasketContentRef, filledBasketContentRef) {
 }
 
 function formatToCurrency(value) {
-    value = new Intl.NumberFormat("de-DE", { style: "currency", currency: "EUR" }).format(value);
+    value = new Intl.NumberFormat('de-DE', {style: 'currency', currency: 'EUR'}).format(value);
     return value;
 }
 
 function addToBasket(mealName) {
-    const mealObjekt = meals.find(meal => meal.name === mealName);
-    basket.push(mealObjekt);
+    let mealObj = meals.find(meal => meal.name == mealName);
+    let basketMealObj = basket.find((element) => element.name == mealObj.name);
+
+    if (basketMealObj == null) {
+        basket.push({...mealObj, amount : 1});   // kopiert Referenz von mealObj und fügt amount nur in basket hinzu
+    } else {
+        basketMealObj.amount++;
+    }
 
     renderBasket();
     calculateBasket();
 }
 
 function removeFromBasket(mealName) {
-    const mealIndex = basket.findIndex(meal => meal.name === mealName);
+    const mealIndex = basket.findIndex(meal => meal.name == mealName);
     basket.splice(mealIndex, 1);
 
     renderBasket();
@@ -70,7 +76,7 @@ function calculateBasket() {
     let subtotalAmount = 0;
 
     for (let basketIndex = 0; basketIndex < basket.length; basketIndex++) {
-        subtotalAmount += basket[basketIndex].price;
+        subtotalAmount += basket[basketIndex].amount * basket[basketIndex].price;
     }
 
     let totalAmount = subtotalAmount + deliveryFee;

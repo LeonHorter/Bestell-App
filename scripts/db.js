@@ -49,7 +49,7 @@ let meals = [
         "imgName" : "menu-07.png"
     },
     {
-        "name" : "Quattro Formaggi with chicken ",
+        "name" : "Pizza Quattro Formaggi with chicken ",
         "description" : "Chicken, Mozzarella, Gorgonzola, Fontina, Parmigiano Reggiano",
         "price" : 15.90,
         "category" : "pizza",

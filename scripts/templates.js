@@ -20,10 +20,10 @@ function getBasketItemTemplate(meal) {
                 <div class="basketItemLowerBox">
                     <div class="basketItemActions">
                         <button class="deleteBtn basketItemBtn" onclick="removeFromBasket('${meal.name}')"></button>
-                        1
-                        <button class="basketItemBtn">+</button>
+                        ${meal.amount}
+                        <button class="basketItemBtn" onclick="addToBasket('${meal.name}')">+</button>
                     </div>
-                    <p>${formatToCurrency(meal.price)}</p>
+                    <p>${formatToCurrency(meal.amount * meal.price)}</p>
                 </div>
             </div>`;
 }
