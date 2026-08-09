@@ -37,7 +37,11 @@ function renderFilledBasket(emptyBasketContentRef, filledBasketContentRef) {
     basketContentRef.innerHTML = '';
 
     for (let basketIndex = 0; basketIndex < basket.length; basketIndex++) {
-        basketContentRef.innerHTML += getBasketItemTemplate(basket[basketIndex]);
+        if (basket[basketIndex].amount == 1) {
+            basketContentRef.innerHTML += getBasketItemTemplateQuantityOne(basket[basketIndex]);
+        } else {
+            basketContentRef.innerHTML += getBasketItemTemplate(basket[basketIndex]);
+        }
     }
 }
 
@@ -55,6 +59,15 @@ function addToBasket(mealName) {
     } else {
         basketMealObj.amount++;
     }
+
+    renderBasket();
+    calculateBasket();
+}
+
+function reduceQuantity(mealName) {
+    let basketMealObj = basket.find((element) => element.name == mealName);
+
+    basketMealObj.amount--;
 
     renderBasket();
     calculateBasket();

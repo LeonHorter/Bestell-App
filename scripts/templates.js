@@ -16,8 +16,25 @@ function getMealCardTemplate(meal) {
 
 function getBasketItemTemplate(meal) {
     return `<div class="basketItem">
+                <div class="basketItemBox">
+                    <p>${meal.name}</p>
+                    <button class="deleteBtn basketItemBtn" onclick="removeFromBasket('${meal.name}')"></button>
+                </div>
+                <div class="basketItemBox">
+                    <div class="basketItemActions">
+                        <button class="basketItemBtn" onclick="reduceQuantity('${meal.name}')">-</button>
+                        ${meal.amount}
+                        <button class="basketItemBtn" onclick="addToBasket('${meal.name}')">+</button>
+                    </div>
+                    <p>${formatToCurrency(meal.amount * meal.price)}</p>
+                </div>
+            </div>`;
+}
+
+function getBasketItemTemplateQuantityOne(meal) {
+    return `<div class="basketItem">
                 <p>${meal.name}</p>
-                <div class="basketItemLowerBox">
+                <div class="basketItemBox">
                     <div class="basketItemActions">
                         <button class="deleteBtn basketItemBtn" onclick="removeFromBasket('${meal.name}')"></button>
                         ${meal.amount}
