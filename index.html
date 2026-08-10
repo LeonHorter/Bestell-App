@@ -24,9 +24,10 @@
             <button class="menuBtn"></button>
         </div>
     </header>
+
     <main>
         <div class="basketScrollContainer">
-            <div class="basket">
+            <div id="basket" class="basket">
                 <h4>Your Basket</h4>
                 <div id="basketEmpty" class="basketContainer dNone">
                     <p class="basketEmptyText">Nothing here yet.<br>Go ahead and choose something delicious!</p>
@@ -53,7 +54,7 @@
                             </tr>
                         </tfoot>
                     </table>
-                    <button class="buyBtn">Buy now (<span id="buyBtnTotalAmount"></span>)</button>
+                    <button class="buyBtn" onclick="confirmOrder()">Buy now (<span id="buyBtnTotalAmount"></span>)</button>
                 </div>
             </div>
         </div>
@@ -100,6 +101,19 @@
             <div id="salad" class="mealsContent contentWrapper"></div>
         </section>
     </main>
+
+    <dialog id="confirmationMessage">
+        <div class="confirmationMessageContent">
+            <header>
+                <button class="closeBtn" onclick="closeDialog()"></button>
+            </header>
+            <div class="dialogContent">
+                <img src="./assets/img/order_confirmed.png" alt="Order confirmed">
+                <p><span class="dialogHeadline">Order confirmed!</span><br>Your food is on the way!</p>
+            </div>
+        </div>
+    </dialog>
+
     <footer class="mainFooter">
         <div class="contentWrapper footerContent">
             <figure>

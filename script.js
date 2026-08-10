@@ -118,3 +118,28 @@ function calculateBasket() {
     totalAmountContentRef.innerText = formatToCurrency(totalAmount);
     buyBtnTotalAmount.innerText = formatToCurrency(totalAmount);
 }
+
+function confirmOrder() {
+    let dialogRef = document.getElementById('confirmationMessage');
+    
+    emptyBasket();
+    dialogRef.showModal();
+
+    setTimeout(() => {
+        dialogRef.close();
+    }, 2500);
+}
+
+function emptyBasket() {
+    let basketRef = document.getElementById('basket');
+
+    basketRef.classList.add('dNone');
+    basket = [];
+    renderMeals();
+}
+
+function closeDialog() {
+    let dialogRef = document.getElementById('confirmationMessage');
+
+    dialogRef.close();
+}
