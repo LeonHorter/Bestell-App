@@ -83,6 +83,9 @@ dialog::backdrop {
 
 .mainHeader {
     background-color: var(--orangeColor);
+    position: sticky;
+    top: 0;
+    z-index: 3;
 }
 
 .headerContent {
@@ -164,7 +167,7 @@ dialog::backdrop {
     text-align: center;
 }
 
-.basketScrollContainer {
+#basketScrollContainer {
     position: absolute;
     right: 0;
     z-index: 2;
@@ -183,7 +186,7 @@ dialog::backdrop {
     padding: 50px 36px;
 
     position: sticky;
-    top: 0;
+    top: 86px;
 
     display: flex;
     flex-direction: column;
@@ -242,7 +245,7 @@ dialog::backdrop {
     gap: 2px;
 }
 
-.basketItemBtn {
+.iconBtn {
     background-color: unset;
     padding: 0;
 }
@@ -306,6 +309,7 @@ dialog::backdrop {
     font-family: "Palanquin Bold";
     font-size: 32px;
     color: var(--whiteColor);
+    white-space: nowrap;
 }
 
 .buyBtn:hover {
@@ -416,8 +420,129 @@ dialog::backdrop {
     padding-bottom: 24px;
 }
 
-.footerContent > figure {
+.copyrightBox {
     display: flex;
     align-items: center;
     gap: 4px;
+}
+
+.menuBar {
+    display: none;
+}
+
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 40px;
+    }
+
+    h2 {
+        font-size: 32px;
+    }
+
+    #basketScrollContainer {
+        display: none;
+        padding: 0;
+    }
+
+    #hero {
+        padding: 16px 16px 0px 16px;
+    }
+
+    .basket {
+        width: 299px;
+        height: 586px;
+        padding: 38px 22px;
+        border-top-left-radius: 30px;
+        border-top-right-radius: 30px;
+        border-bottom-left-radius: 0;
+    }
+
+    .menuBtn {
+        display: none;
+    }
+
+    .contentWrapper {
+        padding: 16px;
+    }
+
+    .heroImg {
+        height: 346px;
+        border-radius: 16px;
+        margin-bottom: 75px;
+    }
+
+    .restaurantLogoImg {
+        width: 120px;
+        height: 120px;
+        top: 280px;
+    }
+
+    .headline {
+        flex-direction: column-reverse;
+        gap: 16px;
+    }
+
+    .heroText {
+        font-size: 22px;
+    }
+
+    .category > header {
+        margin-top: 70px;
+    }
+
+    .categoryHeaderContent {
+        position: relative;
+        top: -48px;
+
+        flex-direction: column;
+        padding: 0;
+        gap: unset;
+    }
+
+    .categoryImg {
+        width: 60px;
+        height: 60px;
+    }
+
+    .mealCard {
+        width: unset;
+        flex-direction: column;
+    }
+
+    .mealCard > img {
+        width: unset;
+        height: 86px;
+    }
+
+    .mealCardContent {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .mealCardRightBox {
+        flex-direction: row;
+        align-items: center;
+        padding: 8px 0px;
+    }
+
+    .footerContent {
+        padding: 32px;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .copyrightBox {
+        order: 1;
+    }
+
+    .menuBar {
+        position: sticky;
+        bottom: 0;
+        background-color: var(--grayColor);
+        padding: 24px;
+
+        display: flex;
+        justify-content: center;
+        gap: 64px;
+    }
 }

@@ -131,7 +131,7 @@ function confirmOrder() {
 }
 
 function emptyBasket() {
-    let basketRef = document.getElementById('basket');
+    let basketRef = document.getElementById('basketScrollContainer');
 
     basketRef.classList.add('dNone');
     basket = [];
