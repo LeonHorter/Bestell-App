@@ -245,13 +245,14 @@ dialog::backdrop {
     gap: 2px;
 }
 
-.iconBtn {
+.basicBtn {
     background-color: unset;
     padding: 0;
 }
 
 .deleteBtn {
     background-image: url(./assets/icons/delete.svg);
+    background-color: unset;
     width: 24px;
     height: 24px;
     padding: 3px 4px;
@@ -440,8 +441,20 @@ dialog::backdrop {
     }
 
     #basketScrollContainer {
-        display: none;
+        position: fixed;
+        bottom: 74px;
         padding: 0;
+        right: unset;
+        width: 100%;
+        height: unset;
+        display: flex;
+        justify-content: center;
+    }
+
+    #basketContent {
+        height: 330px;
+        width: 300px;
+        margin-left: unset;
     }
 
     #hero {
@@ -544,5 +557,67 @@ dialog::backdrop {
         display: flex;
         justify-content: center;
         gap: 64px;
+    }
+
+    .menuBarBtn {
+        width: 30px;
+        height: 30px;
+        background-color: unset;
+        padding: 3px 4px;
+        border-radius: 5px;
+    }
+
+    .menuBarBtn:active {
+        background-color: var(--whiteColor);
+    }
+
+    .menuBarLink {
+        width: 22px;
+        height: 24px;
+        background-color: unset;
+        background-repeat: no-repeat;
+        background-position: center;
+        padding: 3px 4px;
+        border-radius: 5px;
+    }
+
+    .menuBarLink:active {
+        background-color: var(--whiteColor);
+    }
+
+    .homeBtn {
+        background-image: url(./assets/icons/home.svg);
+    }
+
+    .homeBtn:active {
+        background-image: url(./assets/icons/home_active.svg);
+    }
+
+    .profileBtn {
+        background-image: url(./assets/icons/profile.svg);
+    }
+
+    .profileBtn:active {
+        background-image: url(./assets/icons/profile_active.svg);
+    }
+
+    .ordersBtn {
+        background-image: url(/assets/icons/orders.svg);
+    }
+
+    .ordersBtn:active {
+        background-image: url(./assets/icons/orders_active.svg);
+    }
+
+    .basketBtn {
+        background-image: url(./assets/icons/basket.svg);
+    }
+
+    .basketBtn:active {
+        background-image: url(./assets/icons/basket_active.svg);
+    }
+
+    .basketItem {
+        width: 260px;
     }
 }

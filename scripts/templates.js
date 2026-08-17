@@ -18,13 +18,13 @@ function getBasketItemTemplate(meal) {
     return `<div class="basketItem">
                 <div class="basketItemBox">
                     <p>${meal.name}</p>
-                    <button class="deleteBtn iconBtn" onclick="removeFromBasket('${meal.name}')"></button>
+                    <button class="deleteBtn" onclick="removeFromBasket('${meal.name}')"></button>
                 </div>
                 <div class="basketItemBox">
                     <div class="basketItemActions">
-                        <button class="iconBtn" onclick="reduceQuantity('${meal.name}')">-</button>
+                        <button class="basicBtn" onclick="reduceQuantity('${meal.name}')">-</button>
                         ${meal.amount}
-                        <button class="iconBtn" onclick="addToBasket('${meal.name}')">+</button>
+                        <button class="basicBtn" onclick="addToBasket('${meal.name}')">+</button>
                     </div>
                     <p>${formatToCurrency(meal.amount * meal.price)}</p>
                 </div>
@@ -36,9 +36,9 @@ function getBasketItemTemplateQuantityOne(meal) {
                 <p>${meal.name}</p>
                 <div class="basketItemBox">
                     <div class="basketItemActions">
-                        <button class="deleteBtn iconBtn" onclick="removeFromBasket('${meal.name}')"></button>
+                        <button class="deleteBtn" onclick="removeFromBasket('${meal.name}')"></button>
                         ${meal.amount}
-                        <button class="iconBtn" onclick="addToBasket('${meal.name}')">+</button>
+                        <button class="basicBtn" onclick="addToBasket('${meal.name}')">+</button>
                     </div>
                     <p>${formatToCurrency(meal.amount * meal.price)}</p>
                 </div>

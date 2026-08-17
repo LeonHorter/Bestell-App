@@ -143,3 +143,9 @@ function closeDialog() {
 
     dialogRef.close();
 }
+
+// function toggleBasket() {
+//     let basketRef = document.getElementById('basketScrollContainer');
+
+//     basketRef.setAttribute('display', 'flex');
+// }
