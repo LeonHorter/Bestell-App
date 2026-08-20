@@ -115,35 +115,37 @@
         </div>
     </dialog>
 
-    <dialog id="basketMobile" class="basket">
-        <h4>Your Basket</h4>
-        <div id="basketMobileEmpty" class="basketContainer dNone">
-            <p class="basketEmptyText">Nothing here yet.<br>Go ahead and choose something delicious!</p>
-            <img src="./assets/icons/basket_lightOrange.svg" alt="basket" class="basketIcon">
-        </div>
-        <div id="basketMobileFilled" class="basketContainer dNone">
-            <div id="basketMobileContent">
+    <dialog id="basketMobile">
+        <div class="basket">
+            <h4>Your Basket</h4>
+            <div id="basketMobileEmpty" class="basketContainer dNone">
+                <p class="basketEmptyText">Nothing here yet.<br>Go ahead and choose something delicious!</p>
+                <img src="./assets/icons/basket_lightOrange.svg" alt="basket" class="basketIcon">
             </div>
-            <table class="calculationTable">
-                <tbody>
-                    <tr>
-                        <td>Subtotal</td>
-                        <td id="subtotalMobileAmount"></td>
-                    </tr>
-                    <tr>
-                        <td>Delivery fee</td>
-                        <td id="deliveryMobileAmount"></td>
-                    </tr>
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <td>Total</td>
-                        <td id="totalMobileAmount"></td>
-                    </tr>
-                </tfoot>
-            </table>
-            <button class="buyBtn" onclick="confirmOrder()">Buy now (<span
-                    id="buyBtnMobileTotalAmount"></span>)</button>
+            <div id="basketMobileFilled" class="basketContainer dNone">
+                <div id="basketMobileContent">
+                </div>
+                <table class="calculationTable">
+                    <tbody>
+                        <tr>
+                            <td>Subtotal</td>
+                            <td id="subtotalMobileAmount"></td>
+                        </tr>
+                        <tr>
+                            <td>Delivery fee</td>
+                            <td id="deliveryMobileAmount"></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td>Total</td>
+                            <td id="totalMobileAmount"></td>
+                        </tr>
+                    </tfoot>
+                </table>
+                <button class="buyBtn" onclick="confirmOrder()">Buy now (<span
+                        id="buyBtnMobileTotalAmount"></span>)</button>
+            </div>
         </div>
     </dialog>
 
