@@ -1,26 +1,34 @@
 function renderMeals() {
-    let contentRef = [
+    const contentRefs = [
         document.getElementById('burger'),
         document.getElementById('pizza'),
         document.getElementById('salad')
     ];
 
-    for (let contentRefIndex = 0; contentRefIndex < contentRef.length; contentRefIndex++) {
-        contentRef[contentRefIndex].innerHTML = '';
+    for (let contentRefsIndex = 0; contentRefsIndex < contentRefs.length; contentRefsIndex++) {
+        contentRefs[contentRefsIndex].innerHTML = '';
 
-        const mealsFilter = meals.filter(meal => meal.category == contentRef[contentRefIndex].id);
-        mealsFilter.forEach(meal => contentRef[contentRefIndex].innerHTML += getMealCardTemplate(meal));
+        const mealsFilter = meals.filter(meal => meal.category == contentRefs[contentRefsIndex].id);
+        mealsFilter.forEach(meal => contentRefs[contentRefsIndex].innerHTML += getMealCardTemplate(meal));
     }
 }
 
 function renderBasket() {
-    let emptyBasketContentRef = document.getElementById('basketEmpty');
-    let filledBasketContentRef = document.getElementById('basketFilled');
+    const contentRefs = [
+        {
+            empty: document.getElementById('basketDesktopEmpty'),
+            filled: document.getElementById('basketDesktopFilled')
+        },
+        {
+            empty: document.getElementById('basketMobileEmpty'),
+            filled: document.getElementById('basketMobileFilled')
+        }
+    ];
 
     if (basket == '') {
-        renderEmptyBasket(emptyBasketContentRef, filledBasketContentRef);
+        contentRefs.forEach(element => renderEmptyBasket(element.empty, element.filled));
     } else {
-        renderFilledBasket(emptyBasketContentRef, filledBasketContentRef);
+        contentRefs.forEach(element => renderFilledBasket(element.empty, element.filled));
     }
 }
 
@@ -33,14 +41,18 @@ function renderFilledBasket(emptyBasketContentRef, filledBasketContentRef) {
     emptyBasketContentRef.classList.add('dNone');
     filledBasketContentRef.classList.remove('dNone');
 
-    let basketContentRef = document.getElementById('basketContent');
-    basketContentRef.innerHTML = '';
+    const basketContentRefs = [
+        document.getElementById('basketDesktopContent'),
+        document.getElementById('basketMobileContent')
+    ];
+
+    basketContentRefs.forEach(element => element.innerHTML = '');
 
     for (let basketIndex = 0; basketIndex < basket.length; basketIndex++) {
         if (basket[basketIndex].amount == 1) {
-            basketContentRef.innerHTML += getBasketItemTemplateQuantityOne(basket[basketIndex]);
+            basketContentRefs.forEach(element => element.innerHTML += getBasketItemTemplateQuantityOne(basket[basketIndex]));
         } else {
-            basketContentRef.innerHTML += getBasketItemTemplate(basket[basketIndex]);
+            basketContentRefs.forEach(element => element.innerHTML += getBasketItemTemplate(basket[basketIndex]));
         }
     }
 }
@@ -51,8 +63,8 @@ function formatToCurrency(value) {
 }
 
 function addToBasket(mealName) {
-    let mealObj = meals.find(meal => meal.name == mealName);
-    let basketMealObj = basket.find(element => element.name == mealObj.name);
+    const mealObj = meals.find(meal => meal.name == mealName);
+    const basketMealObj = basket.find(element => element.name == mealObj.name);
 
     if (basketMealObj == null) {
         basket.push({ ...mealObj, amount: 1 });   // kopiert Referenz von mealObj und fügt amount nur in basket hinzu
@@ -66,7 +78,7 @@ function addToBasket(mealName) {
 }
 
 function reduceQuantity(mealName) {
-    let basketMealObj = basket.find(element => element.name == mealName);
+    const basketMealObj = basket.find(element => element.name == mealName);
 
     basketMealObj.amount--;
 
@@ -85,9 +97,9 @@ function removeFromBasket(mealName) {
 }
 
 function updateMealCard(mealName) {
-    let btnContentRef = document.getElementById('addBasketBtn-' + mealName);
-    let divContentRef = document.getElementById('mealCardLeftBox-' + mealName);
-    let basketMealObj = basket.find(element => element.name == mealName);
+    const btnContentRef = document.getElementById('addBasketBtn-' + mealName);
+    const divContentRef = document.getElementById('mealCardLeftBox-' + mealName);
+    const basketMealObj = basket.find(element => element.name == mealName);
 
     if (basketMealObj != null) {
         btnContentRef.innerText = 'Added ' + basketMealObj.amount;
@@ -101,26 +113,42 @@ function updateMealCard(mealName) {
 }
 
 function calculateBasket() {
-    let subtotalAmountContentRef = document.getElementById('subtotalAmount');
-    let deliveryAmountContentRef = document.getElementById('deliveryAmount');
-    let totalAmountContentRef = document.getElementById('totalAmount');
-    let buyBtnTotalAmount = document.getElementById('buyBtnTotalAmount');
+    const subtotalAmountContentRefs = [
+        document.getElementById('subtotalDesktopAmount'),
+        document.getElementById('subtotalMobileAmount')
+    ];
+
+    const deliveryAmountContentRefs = [
+        document.getElementById('deliveryDesktopAmount'),
+        document.getElementById('deliveryMobileAmount')
+    ];
+
+    const totalAmountContentRefs = [
+        document.getElementById('totalDesktopAmount'),
+        document.getElementById('totalMobileAmount')
+    ];
+
+    const buyBtnTotalContentRefs = [
+        document.getElementById('buyBtnDesktopTotalAmount'),
+        document.getElementById('buyBtnMobileTotalAmount')
+    ];
+
     let subtotalAmount = 0;
 
     for (let basketIndex = 0; basketIndex < basket.length; basketIndex++) {
         subtotalAmount += basket[basketIndex].amount * basket[basketIndex].price;
     }
 
-    let totalAmount = subtotalAmount + deliveryFee;
+    const totalAmount = subtotalAmount + deliveryFee;
 
-    subtotalAmountContentRef.innerText = formatToCurrency(subtotalAmount);
-    deliveryAmountContentRef.innerText = formatToCurrency(deliveryFee);
-    totalAmountContentRef.innerText = formatToCurrency(totalAmount);
-    buyBtnTotalAmount.innerText = formatToCurrency(totalAmount);
+    subtotalAmountContentRefs.forEach(element => element.innerText = formatToCurrency(subtotalAmount));
+    deliveryAmountContentRefs.forEach(element => element.innerText = formatToCurrency(deliveryFee));
+    totalAmountContentRefs.forEach(element => element.innerText = formatToCurrency(totalAmount));
+    buyBtnTotalContentRefs.forEach(element => element.innerText = formatToCurrency(totalAmount));
 }
 
 function confirmOrder() {
-    let dialogRef = document.getElementById('confirmationMessage');
+    const dialogRef = document.getElementById('confirmationMessage');
     
     emptyBasket();
     dialogRef.showModal();
@@ -131,7 +159,7 @@ function confirmOrder() {
 }
 
 function emptyBasket() {
-    let basketRef = document.getElementById('basketScrollContainer');
+    const basketRef = document.getElementById('basketScrollContainer');
 
     basketRef.classList.add('dNone');
     basket = [];
@@ -139,13 +167,13 @@ function emptyBasket() {
 }
 
 function closeDialog() {
-    let dialogRef = document.getElementById('confirmationMessage');
+    const dialogRef = document.getElementById('confirmationMessage');
 
     dialogRef.close();
 }
 
-// function toggleBasket() {
-//     let basketRef = document.getElementById('basketScrollContainer');
+function openBasket() {
+    const basketRef = document.getElementById('basketMobile');
 
-//     basketRef.setAttribute('display', 'flex');
-// }
+    basketRef.showModal();
+}

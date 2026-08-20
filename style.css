@@ -60,12 +60,12 @@ dialog::backdrop {
     align-items: center;
 }
 
-#basketEmpty {
+#basketDesktopEmpty {
     margin-top: 36px;
     gap: 90px;
 }
 
-#basketContent {
+#basketDesktopContent {
     width: 360px;
     height: 410px;
     margin-left: 20px;
@@ -440,25 +440,12 @@ dialog::backdrop {
         font-size: 32px;
     }
 
-    #basketScrollContainer {
-        position: fixed;
-        bottom: 74px;
-        padding: 0;
-        right: unset;
-        width: 100%;
-        height: unset;
-        display: flex;
-        justify-content: center;
-    }
-
-    #basketContent {
-        height: 330px;
-        width: 300px;
-        margin-left: unset;
-    }
-
     #hero {
         padding: 16px 16px 0px 16px;
+    }
+
+    #basketDesktop {
+        display: none;
     }
 
     .basket {
