@@ -28,13 +28,13 @@
     <main>
         <div id="basketScrollContainer">
             <div id="basketDesktop" class="basket">
-                <h4>Your Basket</h4>
-                <div id="basketDesktopEmpty" class="basketContainer dNone">
+                <p class="basketHeadline">Your Basket</p>
+                <div id="basketDesktopEmpty" class="basketContainerEmpty dNone">
                     <p class="basketEmptyText">Nothing here yet.<br>Go ahead and choose something delicious!</p>
                     <img src="./assets/icons/basket_lightOrange.svg" alt="basket" class="basketIcon">
                 </div>
                 <div id="basketDesktopFilled" class="basketContainer dNone">
-                    <div id="basketDesktopContent">
+                    <div id="basketDesktopContent" class="basketContent">
                     </div>
                     <table class="calculationTable">
                         <tbody>
@@ -106,7 +106,7 @@
     <dialog id="confirmationMessage">
         <div class="confirmationMessageContent">
             <header>
-                <button class="closeBtn" onclick="closeDialog()"></button>
+                <button class="closeBtn" onclick="closeConfirmationDialog()"></button>
             </header>
             <div class="dialogContent">
                 <img src="./assets/img/order_confirmed.png" alt="Order confirmed">
@@ -116,14 +116,19 @@
     </dialog>
 
     <dialog id="basketMobile">
-        <div class="basket">
-            <h4>Your Basket</h4>
-            <div id="basketMobileEmpty" class="basketContainer dNone">
+        <div class="basketMobileBox">
+            <header>
+                <div class="buttonSection">
+                    <button class="closeBtn" onclick="toggleMobileBasket()"></button>
+                </div>
+                <p class="basketHeadline">Your Basket</p>
+            </header>
+            <div id="basketMobileEmpty" class="basketContainerEmpty dNone">
                 <p class="basketEmptyText">Nothing here yet.<br>Go ahead and choose something delicious!</p>
                 <img src="./assets/icons/basket_lightOrange.svg" alt="basket" class="basketIcon">
             </div>
             <div id="basketMobileFilled" class="basketContainer dNone">
-                <div id="basketMobileContent">
+                <div id="basketMobileContent" class="basketContent">
                 </div>
                 <table class="calculationTable">
                     <tbody>
@@ -164,7 +169,7 @@
         <a href="index.html" class="homeBtn menuBarLink"></a>
         <button class="profileBtn menuBarBtn"></button>
         <button class="ordersBtn menuBarBtn"></button>
-        <button class="basketBtn menuBarBtn" onclick="openBasket()"></button>
+        <button id="basketBtn" class="basketBtn menuBarBtn" onclick="toggleMobileBasket()"></button>
     </nav>
 </body>
 

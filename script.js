@@ -163,17 +163,25 @@ function emptyBasket() {
 
     basketRef.classList.add('dNone');
     basket = [];
+    renderBasket();
     renderMeals();
 }
 
-function closeDialog() {
+function closeConfirmationDialog() {
     const dialogRef = document.getElementById('confirmationMessage');
 
     dialogRef.close();
 }
 
-function openBasket() {
+function toggleMobileBasket() {
     const basketRef = document.getElementById('basketMobile');
+    const basketBtnRef = document.getElementById('basketBtn');
 
-    basketRef.showModal();
+    if (basketRef.open) {
+        basketRef.close();
+    } else {
+        basketRef.show();
+    }
+
+    basketBtnRef.classList.toggle('basketBtnActive');
 }

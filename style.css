@@ -13,7 +13,7 @@ main {
     position: relative;
 }
 
-main > .contentWrapper {
+main>.contentWrapper {
     padding-top: 0;
 }
 
@@ -32,11 +32,6 @@ h3 {
     font-size: 24px;
 }
 
-h4 {
-    font-family: "Palanquin Bold";
-    font-size: 32px;
-}
-
 button {
     cursor: pointer;
     border: none;
@@ -47,7 +42,7 @@ button {
 dialog {
     background-color: var(--grayColor);
     border: none;
-    border-radius: 30px;
+    padding: 0;
 }
 
 dialog::backdrop {
@@ -60,21 +55,17 @@ dialog::backdrop {
     align-items: center;
 }
 
-#basketDesktopEmpty {
-    margin-top: 36px;
-    gap: 90px;
+#basketScrollContainer {
+    position: absolute;
+    right: 0;
+    z-index: 2;
+    padding-right: calc(50% - 720px);
+    padding-top: 730px;
+    height: calc(100% - 730px);
 }
 
-#basketDesktopContent {
-    width: 360px;
-    height: 410px;
-    margin-left: 20px;
-    overflow-y: scroll;
-    scrollbar-color: var(--lightOrangeColor) var(--grayColor);
-
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+#confirmationMessage {
+    border-radius: 30px;
 }
 
 .contentWrapper {
@@ -94,7 +85,7 @@ dialog::backdrop {
     align-items: center;
 }
 
-.headerContent > a {
+.headerContent>a {
     display: flex;
 }
 
@@ -167,15 +158,6 @@ dialog::backdrop {
     text-align: center;
 }
 
-#basketScrollContainer {
-    position: absolute;
-    right: 0;
-    z-index: 2;
-    padding-right: calc(50% - 720px);
-    padding-top: 730px;
-    height: calc(100% - 730px);
-}
-
 .basket {
     width: 363px;
     height: 721px;
@@ -190,8 +172,14 @@ dialog::backdrop {
 
     display: flex;
     flex-direction: column;
-    align-items: center;
     gap: 36px;
+}
+
+.basketHeadline {
+    font-family: "Palanquin Bold";
+    font-size: 32px;
+    text-align: center;
+    line-height: 120%;
 }
 
 .basketContainer {
@@ -201,11 +189,31 @@ dialog::backdrop {
     gap: 36px;
 }
 
+.basketContainerEmpty {
+    margin-top: 36px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 90px;
+}
+
 .basketEmptyText {
     font-family: "Palanquin Medium";
     font-size: 24px;
     line-height: 120%;
     text-align: center;
+    margin: 0;
+}
+
+.basketContent {
+    width: 360px;
+    height: 410px;
+    margin-left: 20px;
+    overflow-y: scroll;
+    scrollbar-color: var(--lightOrangeColor) var(--grayColor);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .basketIcon {
@@ -220,7 +228,7 @@ dialog::backdrop {
     padding: 20px;
     background-color: var(--lightOrangeColor);
     border-radius: 20px;
-    
+
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -274,28 +282,28 @@ dialog::backdrop {
     border-collapse: collapse;
 }
 
-.calculationTable > tbody {
+.calculationTable>tbody {
     font-family: "Palanquin SemiBold";
     font-size: 20px;
     font-weight: 600;
 }
 
-.calculationTable > tbody > tr:last-child > td {
+.calculationTable>tbody>tr:last-child>td {
     padding-bottom: 16px;
     border-bottom: 3px white solid;
 }
 
-.calculationTable > tfoot {
+.calculationTable>tfoot {
     font-family: "Palanquin Bold";
     font-weight: 700;
     font-size: 22px;
 }
 
-.calculationTable > tfoot td {
+.calculationTable>tfoot td {
     padding-top: 16px;
 }
 
-.calculationTable tr > td:last-child {
+.calculationTable tr>td:last-child {
     text-align: right;
 }
 
@@ -311,6 +319,7 @@ dialog::backdrop {
     font-size: 32px;
     color: var(--whiteColor);
     white-space: nowrap;
+    line-height: 100%;
 }
 
 .buyBtn:hover {
@@ -318,7 +327,7 @@ dialog::backdrop {
     color: var(--orangeColor);
 }
 
-.buyBtn > span {
+.buyBtn>span {
     font-family: "Palanquin Bold";
 }
 
@@ -328,7 +337,7 @@ dialog::backdrop {
     gap: 16px;
 }
 
-.category > header {
+.category>header {
     color: var(--whiteColor);
     background-color: var(--orangeColor);
     margin-top: 30px;
@@ -370,13 +379,13 @@ dialog::backdrop {
 
 .confirmationMessageContent {
     padding: 32px 40px;
-    
+
     display: flex;
     flex-direction: column;
     gap: 8px;
 }
 
-.confirmationMessageContent > header {
+.confirmationMessageContent>header {
     display: flex;
     justify-content: flex-end;
 }
@@ -394,12 +403,12 @@ dialog::backdrop {
     line-height: 130%;
 }
 
-.dialogContent > img {
+.dialogContent>img {
     width: 80px;
     transform: scaleX(-1);
 }
 
-.dialogContent > p {
+.dialogContent>p {
     margin: 0;
 }
 
@@ -448,13 +457,48 @@ dialog::backdrop {
         display: none;
     }
 
-    .basket {
+    #basketMobile {
         width: 299px;
         height: 586px;
-        padding: 38px 22px;
+        z-index: 3;
+        background-color: var(--grayColor);
+        color: var(--lightOrangeColor);
         border-top-left-radius: 30px;
         border-top-right-radius: 30px;
-        border-bottom-left-radius: 0;
+        padding: 38px 22px;
+
+        position: sticky;
+        bottom: 78px;
+    }
+
+    .buttonSection {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .basketMobileBox {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .basketContainer {
+        gap: 16px;
+    }
+
+    .basketContent {
+        width: 315px;
+        height: 333px;
+        margin-left: 15px;
+    }
+
+    .basketItem p {
+        margin: 0;
+    }
+
+    .buyBtn {
+        padding: 12px 24px;
+        font-size: 24px;
     }
 
     .menuBtn {
@@ -486,7 +530,7 @@ dialog::backdrop {
         font-size: 22px;
     }
 
-    .category > header {
+    .category>header {
         margin-top: 70px;
     }
 
@@ -509,7 +553,7 @@ dialog::backdrop {
         flex-direction: column;
     }
 
-    .mealCard > img {
+    .mealCard>img {
         width: unset;
         height: 86px;
     }
@@ -604,7 +648,18 @@ dialog::backdrop {
         background-image: url(./assets/icons/basket_active.svg);
     }
 
+    .basketBtnActive {
+        background-color: var(--whiteColor);
+        background-image: url(./assets/icons/basket_active.svg);
+    }
+
     .basketItem {
         width: 260px;
+    }
+}
+
+@media screen and (min-width: 481px) {
+    dialog[open] {
+        display: none;
     }
 }
