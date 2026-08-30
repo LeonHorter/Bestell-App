@@ -514,7 +514,7 @@ dialog::backdrop {
     }
 
     .ordersBtn {
-        background-image: url(/assets/icons/orders.svg);
+        background-image: url(./assets/icons/orders.svg);
     }
 
     .ordersBtn:active {
