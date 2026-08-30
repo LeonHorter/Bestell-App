@@ -108,7 +108,7 @@
 }
 
 .deleteBtn {
-    background-image: url(./assets/icons/delete.svg);
+    background-image: url(../assets/icons/delete.svg);
     background-color: unset;
     width: 24px;
     height: 24px;
@@ -118,7 +118,7 @@
 
 .deleteBtn:hover {
     background-color: var(--whiteColor);
-    background-image: url(./assets/icons/delete_hover.svg);
+    background-image: url(../assets/icons/delete_hover.svg);
 }
 
 .calculationTable {
