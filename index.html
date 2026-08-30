@@ -169,7 +169,13 @@
         <a href="index.html" class="homeBtn menuBarLink"></a>
         <button class="profileBtn menuBarBtn"></button>
         <button class="ordersBtn menuBarBtn"></button>
-        <button id="basketBtn" class="basketBtn menuBarBtn" onclick="toggleMobileBasket()"></button>
+        <div class="basketBtnBox">
+            <button id="basketBtn" class="basketBtn menuBarBtn" onclick="toggleMobileBasket()"></button>
+            <div id="quantityBadgeContainer" class="dNone">
+                <p id="quantityBadge">
+                </p>
+            </div>
+        </div>
     </nav>
 </body>
 

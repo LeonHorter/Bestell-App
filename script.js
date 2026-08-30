@@ -25,11 +25,13 @@ function renderBasket() {
         }
     ];
 
-    if (basket == '') {
+    if (basket.length == 0) {
         contentRefs.forEach(element => renderEmptyBasket(element.empty, element.filled));
     } else {
         contentRefs.forEach(element => renderFilledBasket(element.empty, element.filled));
     }
+
+    renderQuantityBadge();
 }
 
 function renderEmptyBasket(emptyBasketContentRef, filledBasketContentRef) {
@@ -55,6 +57,24 @@ function renderFilledBasket(emptyBasketContentRef, filledBasketContentRef) {
             basketContentRefs.forEach(element => element.innerHTML += getBasketItemTemplate(basket[basketIndex]));
         }
     }
+}
+
+function renderQuantityBadge() {
+    const quantityBadgeContainerRef = document.getElementById('quantityBadgeContainer');
+    const quantityBadgeRef = document.getElementById('quantityBadge');
+    const basketBtnRef = document.getElementById('basketBtn');
+    let basketQuantity = 0;
+    
+    if (basket.length == 0) {
+        quantityBadgeContainerRef.classList.add('dNone');
+        basketBtnRef.classList.remove('basketBtnBasketFilled');
+    } else {
+        quantityBadgeContainerRef.classList.remove('dNone');
+        basketBtnRef.classList.add('basketBtnBasketFilled');
+    }
+
+    basket.forEach(element => basketQuantity += element.amount);
+    quantityBadgeRef.innerText = basketQuantity;
 }
 
 function formatToCurrency(value) {
@@ -183,5 +203,5 @@ function toggleMobileBasket() {
         basketRef.show();
     }
 
-    basketBtnRef.classList.toggle('basketBtnActive');
+    basketBtnRef.classList.toggle('basketBtnActivated');
 }
