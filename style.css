@@ -281,7 +281,7 @@ dialog::backdrop {
     }
 }
 
-@media screen and (min-width: 361px) {
+@media screen and (min-width: 361px) and (max-width: 1280px) {
     #basketMobile {
         width: 299px;
     }
