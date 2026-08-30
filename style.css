@@ -440,7 +440,47 @@ dialog::backdrop {
     display: none;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 600px) {
+    .contentWrapper {
+        padding: 16px;
+    }
+
+    .mealCard {
+        width: unset;
+        flex-direction: column;
+    }
+
+    .mealCard>img {
+        width: unset;
+        height: 86px;
+    }
+
+    .mealCardContent {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .mealCardRightBox {
+        flex-direction: row;
+        align-items: center;
+        padding: 8px 0px;
+    }
+}
+
+@media screen and (min-width: 601px) and (max-width: 745px) {
+    .mealCard {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 601px) and (max-width: 1280px) {
+    .contentWrapper {
+        align-items: center;
+        padding: 32px;
+    }
+}
+
+@media screen and (max-width: 1280px) {
     h1 {
         font-size: 40px;
     }
@@ -467,7 +507,7 @@ dialog::backdrop {
         border-top-right-radius: 30px;
         padding: 38px 22px;
 
-        position: sticky;
+        position: fixed;
         bottom: 78px;
     }
 
@@ -525,10 +565,6 @@ dialog::backdrop {
         display: none;
     }
 
-    .contentWrapper {
-        padding: 16px;
-    }
-
     .heroImg {
         height: 346px;
         border-radius: 16px;
@@ -566,27 +602,6 @@ dialog::backdrop {
     .categoryImg {
         width: 60px;
         height: 60px;
-    }
-
-    .mealCard {
-        width: unset;
-        flex-direction: column;
-    }
-
-    .mealCard>img {
-        width: unset;
-        height: 86px;
-    }
-
-    .mealCardContent {
-        flex-direction: column;
-        gap: 16px;
-    }
-
-    .mealCardRightBox {
-        flex-direction: row;
-        align-items: center;
-        padding: 8px 0px;
     }
 
     .footerContent {
@@ -686,7 +701,7 @@ dialog::backdrop {
     }
 }
 
-@media screen and (min-width: 481px) {
+@media screen and (min-width: 1281px) {
     dialog[open] {
         display: none;
     }
