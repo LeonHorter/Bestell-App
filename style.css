@@ -5,10 +5,6 @@ body {
 }
 
 main {
-    /* display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex: 1; */
     color: var(--grayColor);
     position: relative;
 }
@@ -277,7 +273,6 @@ dialog::backdrop {
 }
 
 .calculationTable {
-    width: 300px;
     color: var(--whiteColor);
     border-collapse: collapse;
 }
@@ -440,6 +435,52 @@ dialog::backdrop {
     display: none;
 }
 
+@media screen and (max-width: 360px) {
+    #basketMobile {
+        width: 260px;
+    }
+
+    .basketContent {
+        width: 270px;
+    }
+
+    .basketItem {
+        width: 210px;
+    }
+    
+    .menuBar {
+        gap: unset;
+        justify-content: space-between;
+    }
+
+    .calculationTable {
+        width: 240px;
+    }
+}
+
+@media screen and (min-width: 361px) {
+    #basketMobile {
+        width: 299px;
+    }
+
+    .basketContent {
+        width: 315px;
+    }
+
+    .basketItem {
+        width: 260px;
+    }
+
+    .menuBar {
+        justify-content: center;
+        gap: 64px;
+    }
+
+    .calculationTable {
+        width: 300px;
+    }
+}
+
 @media screen and (max-width: 600px) {
     .contentWrapper {
         padding: 16px;
@@ -498,7 +539,6 @@ dialog::backdrop {
     }
 
     #basketMobile {
-        width: 299px;
         height: 586px;
         z-index: 3;
         background-color: var(--grayColor);
@@ -547,7 +587,6 @@ dialog::backdrop {
     }
 
     .basketContent {
-        width: 315px;
         height: 333px;
         margin-left: 15px;
     }
@@ -621,8 +660,6 @@ dialog::backdrop {
         padding: 24px;
 
         display: flex;
-        justify-content: center;
-        gap: 64px;
     }
 
     .menuBarBtn {
@@ -635,16 +672,6 @@ dialog::backdrop {
 
     .menuBarBtn:active {
         background-color: var(--whiteColor);
-    }
-
-    .menuBarLink {
-        width: 22px;
-        height: 24px;
-        background-color: unset;
-        background-repeat: no-repeat;
-        background-position: center;
-        padding: 3px 4px;
-        border-radius: 5px;
     }
 
     .menuBarLink:active {
@@ -694,10 +721,6 @@ dialog::backdrop {
 
     .basketBtnBox {
         position: relative;
-    }
-
-    .basketItem {
-        width: 260px;
     }
 }
 
