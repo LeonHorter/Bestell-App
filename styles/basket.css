@@ -122,6 +122,7 @@
 }
 
 .calculationTable {
+    width: 300px;
     color: var(--whiteColor);
     border-collapse: collapse;
 }
