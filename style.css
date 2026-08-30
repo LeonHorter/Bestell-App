@@ -51,15 +51,6 @@ dialog::backdrop {
     align-items: center;
 }
 
-#basketScrollContainer {
-    position: absolute;
-    right: 0;
-    z-index: 2;
-    padding-right: calc(50% - 720px);
-    padding-top: 730px;
-    height: calc(100% - 730px);
-}
-
 #confirmationMessage {
     border-radius: 30px;
 }
@@ -154,176 +145,8 @@ dialog::backdrop {
     text-align: center;
 }
 
-.basket {
-    width: 363px;
-    height: 721px;
-    background-color: var(--grayColor);
-    color: var(--lightOrangeColor);
-    border-top-left-radius: 30px;
-    border-bottom-left-radius: 30px;
-    padding: 50px 36px;
-
-    position: sticky;
-    top: 86px;
-
-    display: flex;
-    flex-direction: column;
-    gap: 36px;
-}
-
-.basketHeadline {
-    font-family: "Palanquin Bold";
-    font-size: 32px;
-    text-align: center;
-    line-height: 120%;
-}
-
-.basketContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 36px;
-}
-
-.basketContainerEmpty {
-    margin-top: 36px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 90px;
-}
-
-.basketEmptyText {
-    font-family: "Palanquin Medium";
-    font-size: 24px;
-    line-height: 120%;
-    text-align: center;
-    margin: 0;
-}
-
-.basketContent {
-    width: 360px;
-    height: 410px;
-    margin-left: 20px;
-    overflow-y: scroll;
-    scrollbar-color: var(--lightOrangeColor) var(--grayColor);
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.basketIcon {
-    width: 120px;
-    height: 120px;
-    object-fit: cover;
-}
-
-.basketItem {
-    width: 300px;
-    height: 90px;
-    padding: 20px;
-    background-color: var(--lightOrangeColor);
-    border-radius: 20px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.basketItem * {
-    font-family: "Palanquin Bold";
-    line-height: 120%;
-    font-size: 22px;
-    color: var(--grayColor);
-}
-
-.basketItemBox {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.basketItemActions {
-    display: flex;
-    align-items: flex-end;
-    gap: 2px;
-}
-
-.basicBtn {
-    background-color: unset;
-    padding: 0;
-}
-
-.deleteBtn {
-    background-image: url(./assets/icons/delete.svg);
-    background-color: unset;
-    width: 24px;
-    height: 24px;
-    padding: 3px 4px;
-    border-radius: 5px;
-}
-
-.deleteBtn:hover {
-    background-color: var(--whiteColor);
-    background-image: url(./assets/icons/delete_hover.svg);
-}
-
 .dNone {
     display: none;
-}
-
-.calculationTable {
-    color: var(--whiteColor);
-    border-collapse: collapse;
-}
-
-.calculationTable>tbody {
-    font-family: "Palanquin SemiBold";
-    font-size: 20px;
-    font-weight: 600;
-}
-
-.calculationTable>tbody>tr:last-child>td {
-    padding-bottom: 16px;
-    border-bottom: 3px white solid;
-}
-
-.calculationTable>tfoot {
-    font-family: "Palanquin Bold";
-    font-weight: 700;
-    font-size: 22px;
-}
-
-.calculationTable>tfoot td {
-    padding-top: 16px;
-}
-
-.calculationTable tr>td:last-child {
-    text-align: right;
-}
-
-.calculationTable td {
-    padding: 4px 0px;
-}
-
-.buyBtn {
-    background-color: var(--orangeColor);
-    padding: 13px 55px;
-    border-radius: 60px;
-    font-family: "Palanquin Bold";
-    font-size: 32px;
-    color: var(--whiteColor);
-    white-space: nowrap;
-    line-height: 100%;
-}
-
-.buyBtn:hover {
-    background-color: var(--whiteColor);
-    color: var(--orangeColor);
-}
-
-.buyBtn>span {
-    font-family: "Palanquin Bold";
 }
 
 .category {
@@ -727,5 +550,10 @@ dialog::backdrop {
 @media screen and (min-width: 1281px) {
     dialog[open] {
         display: none;
+    }
+
+    .marginLeft {
+        margin-left: 40px;
+        transition: 200ms ease-in;
     }
 }

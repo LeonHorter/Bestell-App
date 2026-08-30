@@ -63,10 +63,3 @@
 .orangeFontColor {
     color: var(--orangeColor);
 }
-
-@media screen and (min-width: 1281px) {
-    .marginLeft {
-        margin-left: 40px;
-        transition: 200ms ease-in;
-    }
-}
