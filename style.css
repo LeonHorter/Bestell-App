@@ -428,7 +428,7 @@ body:has(dialog[open]) {
     }
 
     .heroImg {
-        height: 346px;
+        height: 200px;
         border-radius: 16px;
         margin-bottom: 75px;
     }
@@ -436,7 +436,7 @@ body:has(dialog[open]) {
     .restaurantLogoImg {
         width: 120px;
         height: 120px;
-        top: 280px;
+        top: 140px;
     }
 
     .headline {
