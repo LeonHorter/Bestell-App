@@ -103,6 +103,7 @@
 }
 
 .basicBtn {
+    width: 24px;
     background-color: unset;
     padding: 0;
 }
