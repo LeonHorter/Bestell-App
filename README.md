@@ -4,6 +4,8 @@
 
 This is a **practice project created as part of the Developer Akademie** program to deepen foundational web technologies in a practical, real-world scenario.
 
+---
+
 ### 💻 Installation
 
 Follow these steps to run the project locally on your machine:
@@ -22,11 +24,14 @@ Follow these steps to run the project locally on your machine:
    * Since this project uses pure HTML, CSS, and JavaScript, you don't need to install any dependencies.
    * Simply open the `index.html` file in your browser, or use an extension like **Live Server** in VS Code for the best experience.
 
+---
 
 ### 🛠️ Technologies
 * **HTML5** for structuring the content
 * **CSS3** for responsive design and styling
 * **JavaScript** for dynamic logic and interactivity
+
+---
 
 ### 🚀 Key Features
 * **Responsive Design** for mobile, tablet and desktop devices

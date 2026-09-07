@@ -84,7 +84,3 @@ let meals = [
         "imgName" : "menu-12.png"
     }
 ];
-
-let basket = [];
-
-let deliveryFee = 4.99;
