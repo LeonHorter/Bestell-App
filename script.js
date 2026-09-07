@@ -181,7 +181,6 @@ function confirmOrder() {
 function emptyBasket() {
     const basketRef = document.getElementById('basketScrollContainer');
 
-    basketRef.classList.add('dNone');
     basket = [];
     renderBasket();
     renderMeals();

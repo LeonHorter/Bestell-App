@@ -544,7 +544,7 @@ dialog::backdrop {
 }
 
 @media screen and (min-width: 1281px) {
-    dialog[open] {
+    dialog#basketMobile[open] {
         display: none;
     }
 
