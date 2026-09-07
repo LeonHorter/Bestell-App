@@ -45,6 +45,10 @@ dialog::backdrop {
     background-color: rgba(69, 68, 68, 0.4);
 }
 
+body:has(dialog[open]) {
+    overflow: hidden;
+}
+
 #hero {
     display: flex;
     flex-direction: column;
@@ -260,7 +264,7 @@ dialog::backdrop {
 
 @media screen and (max-width: 360px) {
     #basketMobile {
-        width: 260px;
+        width: unset;
     }
 
     .basketContent {
@@ -358,7 +362,7 @@ dialog::backdrop {
     }
 
     #basketMobile {
-        height: 586px;
+        height: 500px;
         z-index: 3;
         background-color: var(--grayColor);
         color: var(--lightOrangeColor);
@@ -406,7 +410,7 @@ dialog::backdrop {
     }
 
     .basketContent {
-        height: 333px;
+        height: 270px;
         margin-left: 15px;
     }
 

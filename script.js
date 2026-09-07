@@ -171,6 +171,7 @@ function confirmOrder() {
     const dialogRef = document.getElementById('confirmationMessage');
     
     emptyBasket();
+    toggleMobileBasket();
     dialogRef.showModal();
 
     setTimeout(() => {
