@@ -189,7 +189,9 @@ function calculateBasket() {
 
 function confirmOrder() {
     emptyBasket();
-    toggleMobileBasket();
+    if (basketMobileRef.open) {
+        toggleMobileBasket();
+    }
     confirmationDialogRef.showModal();
 
     setTimeout(() => {
