@@ -17,7 +17,7 @@ Follow these steps to run the project locally on your machine:
 
 **02** Navigate into the project directory
    ```bash
-   cd BestellAPP
+   cd Bestell-App
    ```
 
 **03** Open the project
