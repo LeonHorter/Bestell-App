@@ -362,7 +362,7 @@ body:has(dialog[open]) {
     }
 
     #basketMobile {
-        height: 500px;
+        height: 600px;
         z-index: 3;
         background-color: var(--grayColor);
         color: var(--lightOrangeColor);
@@ -410,7 +410,7 @@ body:has(dialog[open]) {
     }
 
     .basketContent {
-        height: 270px;
+        height: 370px;
         margin-left: 15px;
     }
 
@@ -559,11 +559,19 @@ body:has(dialog[open]) {
 }
 
 @media screen and (max-height: 755px) {
+    #basketMobile {
+        height: 500px;
+    }
+    
     .heroImg {
         height: 200px;
     }
 
     .restaurantLogoImg {
         top: 140px;
+    }
+
+    .basketContent {
+        height: 270px;
     }
 }
